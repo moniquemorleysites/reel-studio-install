@@ -12,6 +12,7 @@ main() {
   echo
   if [ -n "$OK" ]; then echo "Done. Next: open the Claude app, choose Code and open the AIVideoEditor folder in your home folder."; open -a Claude 2>/dev/null
   else echo "Setup stopped before the end. Send Monique a screenshot of this window, or run it again."; fi
-  read -r -p "Press Enter to close this window. " _
+  read -r -p "Press Enter to close this window. " _ || true
+  [ -n "$OK" ]
 }
 main "$@"
